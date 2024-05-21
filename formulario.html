@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td input[type="text"], 
+        td input[type="email"], 
+        td input[type="number"], 
+        td input[type="date"],
+        td select,
+        td textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        td input[type="radio"],
+        td input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        td textarea {
+            resize: vertical;
+        }
+        td select[multiple] {
+            height: 100px;
+        }
+        .submit-row {
+            text-align: center;
+        }
+        .submit-row input {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-row input:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Cadastro de Pessoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nome Completo:</td>
+                    <td><input type="text" name="nome" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Data de Nascimento:</td>
+                    <td><input type="date" name="data_nascimento" required></td>
+                </tr>
+                <tr>
+                    <td>Sexo:</td>
+                    <td>
+                        <input type="radio" name="sexo" value="masculino" required> Masculino
+                        <input type="radio" name="sexo" value="feminino" required> Feminino
+                    </td>
+                </tr>
+                <tr>
+                    <td>Telefone:</td>
+                    <td><input type="text" name="telefone" required></td>
+                </tr>
+                <tr>
+                    <td>Endereço:</td>
+                    <td><textarea name="endereco" rows="3" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Cidade:</td>
+                    <td><input type="text" name="cidade" required></td>
+                </tr>
+                <tr>
+                    <td>Estado:</td>
+                    <td>
+                        <select name="estado" required>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Países Visitados:</td>
+                    <td>
+                        <select name="paises_visitados[]" multiple>
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="canada">Canadá</option>
+                            <option value="chile">Chile</option>
+                            <option value="china">China</option>
+                            <option value="eua">Estados Unidos</option>
+                            <option value="franca">França</option>
+                            <option value="alemanha">Alemanha</option>
+                            <option value="italia">Itália</option>
+                            <option value="japao">Japão</option>
+                            <option value="mexico">México</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="reinounido">Reino Unido</option>
+                            <option value="russia">Rússia</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobbies:</td>
+                    <td>
+                        <input type="checkbox" name="hobbies[]" value="leitura"> Leitura
+                        <input type="checkbox" name="hobbies[]" value="esportes"> Esportes
+                        <input type="checkbox" name="hobbies[]" value="viagens"> Viagens
+                        <input type="checkbox" name="hobbies[]" value="musica"> Música
+                        <input type="checkbox" name="hobbies[]" value="cinema"> Cinema
+                    </td>
+                </tr>
+                <tr>
+                    <td>Escolaridade:</td>
+                    <td>
+                        <select name="escolaridade" required>
+                            <option value="fundamental">Ensino Fundamental</option>
+                            <option value="medio">Ensino Médio</option>
+                            <option value="superior">Ensino Superior</option>
+                            <option value="pos">Pós-graduação</option>
+                            <option value="mestrado">Mestrado</option>
+                            <option value="doutorado">Doutorado</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Área de Atuação:</td>
+                    <td><input type="text" name="area_atuacao" required></td>
+                </tr>
+                <tr>
+                    <td>Empresa:</td>
+                    <td><input type="text" name="empresa" required></td>
+                </tr>
+                <tr>
+                    <td>Salário:</td>
+                    <td><input type="number" name="salario" required></td>
+                </tr>
+                <tr>
+                    <td>Estado Civil:</td>
+                    <td>
+                        <input type="radio" name="estado_civil" value="solteiro" required> Solteiro(a)
+                        <input type="radio" name="estado_civil" value="casado" required> Casado(a)
+                        <input type="radio" name="estado_civil" value="divorciado" required> Divorciado(a)
+                        <input type="radio" name="estado_civil" value="viuvo" required> Viúvo(a)
+                    </td>
+                </tr>
+                <tr>
+                    <td>CPF:</td>
+                    <td><input type="text" name="cpf" required></td>
+                </tr>
+                <tr>
+                    <td>RG:</td>
+                    <td><input type="text" name="rg" required></td>
+                </tr>
+                <tr>
+                    <td>Observações:</td>
+                    <td><textarea name="observacoes" rows="4"></textarea></td>
+                </tr>
+                <tr class="submit-row">
+                    <td colspan="2"><input type="submit" value="Cadastrar
